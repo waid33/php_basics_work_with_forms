@@ -1,0 +1,4 @@
+﻿Задания отсюда: https://github.com/oleg-shumar/php-academy.kiev.ua/tree/master/functions_forms_tasks
+
+
+Нашу контактную форму передалать,  чтобы все флеш сообщения были реализованы при помощи сессии https://github.com/henry2778/fs2606

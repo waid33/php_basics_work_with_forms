@@ -1,0 +1,4 @@
+a:3:{s:8:"username";s:4:"John";s:5:"email";s:12:"john@mail.ru";s:7:"comment";s:4:"John";}
+a:3:{s:8:"username";s:4:"John";s:5:"email";s:12:"john@mail.ru";s:7:"comment";s:5:"*****";}
+a:3:{s:8:"username";s:4:"John";s:5:"email";s:12:"john@mail.ru";s:7:"comment";s:15:"Hello I am John";}
+a:3:{s:8:"username";s:4:"Ivan";s:5:"email";s:9:"ivan@i.ua";s:7:"comment";s:21:"Hello I am Ivan *****";}
