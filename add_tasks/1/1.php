@@ -85,6 +85,7 @@ if($_POST){
         <p><input type="submit" value="Отправить"></p>
     </form>
         <hr>
-        Совпадения слов:<?=$result?>
+        <p>Совпадения слов:</p>
+        <p><?=$result?></p>
     </body>
 </html>

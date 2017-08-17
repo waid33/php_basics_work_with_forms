@@ -16,6 +16,7 @@
         </div>
         <?php endforeach;} ?>
         <div class="form">
+            <b><?php echo $msg;?></b>
             <form action="7.php" method="post">
                 <p>Username<input type="text" name="username" id="username" value="<?=requestPost('username')?>"><br/></p>
                 <p>Email<input type="text" name="email" id="email" value="<?=requestPost('email')?>"><br/></p>

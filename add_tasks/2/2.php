@@ -30,15 +30,13 @@ function topThreeWords($a){
     $tmp_arr = [];
     $max_leng = 0;
     if(is_string($a)){
-         $arr1 = strConvertToArr($a);
-        
-        //выполняем поиск 3 слов
+        $arr1 = strConvertToArr($a);
         $top = [];
-        $tmp_arr = [];
-        $max_leng = 0;
-        $arr1 = ['str','stri','string','strin',];
-            
+
+        //выполняем поиск 3 слов      
         for($i = 0; $i < 3; $i++){
+            $tmp_arr = [];
+            $max_leng = 0;
             //Находим самое длинное слово
             foreach($arr1 as $value){
                 if(strlen($value) > $max_leng){
@@ -56,10 +54,6 @@ function topThreeWords($a){
                 if($tmp_arr[0] == $value){
                     unset($arr1[$key]);
                     array_values($arr1);
-                    
-                    echo "<pre>";
-                    print_r($arr1);
-                    echo "</pre>";
                 }
             }
         }
@@ -100,10 +94,13 @@ if($_POST){
     <h1></h1>
     <form action="2.php" method="post">
         <p><b>Введете любые слова через запятую:</b></p>
-        <p><textarea rows="10" cols="45" name="words" value="<?=requestPost('words')?>" placeholder="Some words"></textarea></p>
+        <p><textarea rows="10" cols="45" name="words"></textarea></p>
         <p><input type="submit" value="Отправить"></p>
     </form>
         <hr>
-        3 самых больших введённых слова: <?=$result?>
+        <p>3 самых больших введённых слова: </p>
+        <p><?=$result?></p>
+        <p>Из текста:</p>
+        <p><b><?=requestPost('words')?></b></p>
     </body>
 </html>

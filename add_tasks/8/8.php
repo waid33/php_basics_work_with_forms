@@ -1,15 +1,15 @@
 <?php
 // Создать гостевую книгу, где любой человек может оставить комментарий в текстовом поле и добавить его. Все добавленные комментарии выводятся над текстовым полем. Реализовать проверку на наличие в тексте запрещенных слов, матов. При наличии таких слов - выводить сообщение "Некорректный комментарий". Реализовать удаление из комментария всех тегов, кроме тега <b>.
     
-include 'functions.php';
-  
+require 'functions.php';
+global $msg;
 $bad_words = ['beach','smuck','sheet','сука','сволочь','придурок'];
 
-define('PATH','C:/xampp/htdocs/php_academy/back_end/add_tasks/8/');
+define('PATH', __DIR__);
 
 $warning = '';
 
-    $msg = requestGet('msg'); //GET['msg]
+    $msg=requestGet('msg'); //GET['msg]
 
     if($_POST){
         if(formIsValid()){
@@ -30,12 +30,16 @@ $warning = '';
             }
             
             //redirect to same page - GET
-            redirect("/php_academy/back_end/add_tasks/8/8.php?msg = {$msg}");
+            $my_redirection = str_replace('C:\xampp\htdocs','',__FILE__);
+            $my_redirection = str_replace('\\','/',$my_redirection);
+            
+            redirect($my_redirection."?msg={$msg}");
+            exit;
         }
                 $msg = "form was submitted - invalid";
     }
-if(file_exists(PATH.'comments.txt')){
-    $feedbacks = [];
+$feedbacks = [];
+if(file_exists(PATH.'\comments.txt')){
     $serializedFeedbacks = file('comments.txt');
     //первый способ
     foreach($serializedFeedbacks as $s){
@@ -49,5 +53,4 @@ if(file_exists(PATH.'comments.txt')){
     //});
 }
 
-
-include_once 'layout.php';
+require 'layout.php';

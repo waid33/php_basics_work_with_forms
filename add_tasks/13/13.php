@@ -11,8 +11,7 @@
 */
     
 include 'functions.php';
-  
-$bad_words = ['beach','smuck','sheet','сволочь','придурок'];
+$string = 'яблоко черешня вишня вишня черешня груша яблоко черешня вишня яблоко вишня вишня черешня груша яблоко черешня черешня вишня яблоко вишня вишня черешня вишня черешня груша яблоко черешня черешня вишня яблоко вишня вишня черешня черешня груша яблоко черешня вишня';
 
 //устанавливаем русскую локаль
 setlocale(LC_ALL, 'ru_RU.UTF-8');
@@ -21,9 +20,6 @@ setlocale(LC_ALL, 'ru_RU.UTF-8');
     $text_arr =[];
     if($_POST){
         if(formIsValid()){ 
-            //удаляем плохие слова
-            $_POST['string'] = str_ireplace($bad_words, '*****',$_POST['string']);
-
             $text_arr = statisticString($_POST['string']);   
         }
     }

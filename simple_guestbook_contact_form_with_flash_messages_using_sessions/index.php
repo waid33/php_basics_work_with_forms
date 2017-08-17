@@ -3,8 +3,13 @@ session_start();
 include 'functions.php';    
 
 $words = ['beach','smuck','sheet'];
-$uri = "/php_academy/back_end/home_work/home_work_07_08_2017_contact_form_with_flash_messages_using_sessions/";
-$path ='C:\xampp\htdocs\php_academy\back_end\home_work\home_work_07_08_2017_contact_form_with_flash_messages_using_sessions\\';
+//$uri = "/php_academy/back_end/home_work/home_work_07_08_2017_contact_form_with_flash_messages_using_sessions/";
+//redirect to same page - GET
+$uri = str_replace('C:\xampp\htdocs','',__FILE__);
+$uri = str_replace('\\','/',$uri);    
+                
+//$path ='C:\xampp\htdocs\php_academy\back_end\home_work\home_work_07_08_2017_contact_form_with_flash_messages_using_sessions\\';
+$path = __DIR__."\\";
 $msg = getFlash('msg');
 
     if($_POST){

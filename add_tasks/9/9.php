@@ -2,10 +2,11 @@
 // Написать функцию, которая переворачивает строку. Было "abcde", должна выдать "edcba". Ввод текста реализовать с помощью формы.
     
 include 'functions.php';
-  
+header('Content-Type: text/html; charset=utf-8');
+
 $bad_words = ['beach','smuck','sheet','сука','сволочь','придурок'];
 
-define('PATH','C:/xampp/htdocs/php_academy/back_end/add_tasks/9/');
+define('PATH',__DIR__);
 
     $msg = requestGet('msg'); //GET['msg]
 
@@ -19,37 +20,36 @@ define('PATH','C:/xampp/htdocs/php_academy/back_end/add_tasks/9/');
             $_POST['string'] = strip_tags($_POST['string'],'<b>');
             
             //переворачиваем все слова в строках
-            $string_words =[];
-            $rev_words ='';
-            $string_words = explode(' ',$_POST['string']);
-            foreach($string_words as $string){
-                $rev_words.= " ".revertString($string);   
+            $strings =[];
+            $rev_strings ='';
+            $strings = explode(PHP_EOL,$_POST['string']);
+            foreach($strings as $string){
+                $rev_strings.= " ".revertString($string);   
             }
-            $_POST['string'] = trim($rev_words);
             
-            $feedback = serialize($_POST);
+            $_POST['string'] = mb_convert_encoding(trim($rev_strings), "UTF-8");
+            //$feedback = serialize(base64_encode($_POST['string']));
+            $feedback = json_encode($_POST, JSON_UNESCAPED_UNICODE);
+            
             $res = file_put_contents('string.txt',$feedback . PHP_EOL,FILE_APPEND);
+            $res = mb_convert_encoding($res, 'utf-8');
             
             $msg = "String revert";
             //redirect to same page - GET
-            redirect("/php_academy/back_end/add_tasks/9/9.php?msg = {$msg}");
+            $my_redirection = str_replace('C:\xampp\htdocs','',__FILE__);
+            $my_redirection = str_replace('\\','/',$my_redirection);
+            redirect($my_redirection."?msg = {$msg}");
+            exit;
             }
         $msg = "form was submitted - invalid";
     }
-if(file_exists(PATH.'string.txt')){
-    $feedbacks = [];
-    $serializedFeedbacks = file('string.txt');
-    //первый способ
-    foreach($serializedFeedbacks as $s){
-        $feedbacks[] = unserialize($s);
+$feedbacks = [];
+if(file_exists(PATH.'\string.txt')){
+    $str_arr = file('string.txt');
+    
+    foreach($str_arr as $str){
+        $feedbacks[] = json_decode($str,true);    
     }
-
-    //второй способ
-    //$feedbacks = file('messages.txt');
-    //array_walk($feedbacks, function (&$item) {
-    //  $item = unserialize($item);
-    //});
 }
 
-
-include_once 'layout.php';
+include 'layout.php';

@@ -25,8 +25,8 @@
             </form>
         </div>
         
-        <p>Сортировка по времени <a href= "<?="/php_academy/back_end/home_work/home_work_07_08_2017_contact_form_with_flash_messages_using_sessions/?sort=ASC"?>">возрастанию</a></p>
-        <p>Сортировка по времени <a href= "<?="/php_academy/back_end/home_work/home_work_07_08_2017_contact_form_with_flash_messages_using_sessions/?sort=DESC"?>">убыванию</a></p>
+        <p>Сортировка по времени <a href= "<?=$uri."?sort=ASC"?>">возрастанию</a></p>
+        <p>Сортировка по времени <a href= "<?=$uri."?sort=DESC"?>">убыванию</a></p>
 
         <hr>
         <?php if(count($feedbacks) > 0):?>

@@ -112,11 +112,11 @@
         $max= 0;
         for($i = 0; $i < count($words);$i++){
             foreach($words as $word){
-                if($words[$i]===$word) $u++;
+                if($words[$i] == $word) $u++;
             }
-            $statistic[$u] = $words[$i];
+            $statistic["$words[$i]"] = $u;
             $u=0;
         }
-        krsort($statistic);
+        arsort($statistic);
         return $statistic;
     }

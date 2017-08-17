@@ -1,5 +1,5 @@
-a:1:{s:6:"string";s:3:"cba";}
-a:1:{s:6:"string";s:6:"fedcba";}
-a:1:{s:6:"string";s:3:"cba";}
-a:1:{s:6:"string";s:3:"cba";}
-a:1:{s:6:"string";s:3:"cba";}
+{"string":"edcba"}
+{"string":"ytrewq"}
+{"string":"ена?"}
+{"string":"?Ѐѿ?"}
+{"string":"ЀѴз?"}

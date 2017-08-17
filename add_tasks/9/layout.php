@@ -7,13 +7,17 @@
         <title>перевёрнутая строка</title>
 	</head>
 	<body>
-         <?php if(isset($feedbacks)){ foreach($feedbacks as $feedback) :?>
-        <div class="message">
-            <?=$feedback['string']?>
-            <hr/>
-        </div>
+       <?php echo "<pre>"; print_r($feedbacks);echo "</pre>";?>
+        <?php if($feedbacks){ foreach($feedbacks as $feedback) :?>
+            <?php foreach($feedback as $key => $value) :?>
+            <div class="message">
+                <?=$value?>
+                <hr/>
+            </div>
+            <?php endforeach; ?>
         <?php endforeach;} ?>
         <div class="form">
+            <?=$msg?>
             <form method="post">
                 <p><b>Введите любую строку:</b></p>
                 <p><textarea name="string"></textarea></p>

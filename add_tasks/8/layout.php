@@ -8,7 +8,7 @@
 	</head>
 	<body>
        
-        <?php if(isset($feedbacks)){ foreach($feedbacks as $feedback) :?>
+        <?php if($feedbacks){ foreach($feedbacks as $feedback) :?>
         <div class="message">
             <?=$feedback['username']?>(<?=$feedback['email']?>)
             <br>
@@ -17,6 +17,7 @@
         </div>
         <?php endforeach;} ?>
         <div class="form">
+            <b><?=$msg?></b>
             <form method="post">
                 <p>Username<input type="text" name="username" id="username" value="<?=requestPost('username')?>"><br/></p>
                 <p>Email<input type="text" name="email" id="email" value="<?=requestPost('email')?>"><br/></p>

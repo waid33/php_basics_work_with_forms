@@ -23,6 +23,6 @@ function listOfFiles($dir){
 }
 
 
-listOfFiles('C:\xampp\htdocs\php_academy\back_end\add_tasks');
+listOfFiles(__DIR__);
 
 ?>

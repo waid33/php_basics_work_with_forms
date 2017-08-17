@@ -1,4 +1,4 @@
-a:4:{s:8:"username";s:4:"John";s:5:"email";s:12:"john@mail.ru";s:7:"message";s:15:"Hello I am John";s:4:"date";s:19:"2017-08-15 14:08:41";}
-a:4:{s:8:"username";s:4:"Ivan";s:5:"email";s:9:"ivan@i.ua";s:7:"message";s:15:"Hello I am Ivan";s:4:"date";s:19:"2017-08-15 14:09:03";}
-a:4:{s:8:"username";s:6:"Donald";s:5:"email";s:11:"donald@i.ua";s:7:"message";s:17:"Hello I am Donald";s:4:"date";s:19:"2017-08-15 14:09:38";}
-a:4:{s:8:"username";s:4:"Petr";s:5:"email";s:13:"petr@mail.com";s:7:"message";s:15:"Hello I am Petr";s:4:"date";s:19:"2017-08-15 14:23:51";}
+a:4:{s:8:"username";s:4:"John";s:5:"email";s:12:"john@mail.ru";s:7:"message";s:15:"Hello I am John";s:4:"date";s:19:"2017-08-17 15:41:05";}
+a:4:{s:8:"username";s:6:"Donald";s:5:"email";s:11:"donald@i.ua";s:7:"message";s:17:"Hello I am Donald";s:4:"date";s:19:"2017-08-17 15:41:27";}
+a:4:{s:8:"username";s:4:"Ivan";s:5:"email";s:9:"ivan@i.ua";s:7:"message";s:15:"hello I am Ivan";s:4:"date";s:19:"2017-08-17 15:41:47";}
+a:4:{s:8:"username";s:6:"Donald";s:5:"email";s:6:"bob@ds";s:7:"message";s:7:"***** i";s:4:"date";s:19:"2017-08-17 15:46:08";}

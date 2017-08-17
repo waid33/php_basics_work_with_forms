@@ -4,9 +4,9 @@ include 'functions.php';
   
 $bad_words = ['beach','smuck','sheet','сука','сволочь','придурок'];
 
-define('PATH','C:/xampp/htdocs/php_academy/back_end/add_tasks/7/');
+define('PATH',__DIR__);
 
-    $msg = requestGet('msg'); //GET['msg]
+    $msg=requestGet('msg'); //GET['msg]
 
     if($_POST){
         if(formIsValid()){
@@ -15,16 +15,20 @@ define('PATH','C:/xampp/htdocs/php_academy/back_end/add_tasks/7/');
             $feedback = serialize($_POST);
             $res = file_put_contents('comments.txt',$feedback . PHP_EOL,FILE_APPEND);
             
-            $msg = "Message saved";
+            $msg="Message saved";
                 
             //redirect to same page - GET
-            redirect("/php_academy/back_end/add_tasks/7/7.php?msg = {$msg}");
+            $my_redirection = str_replace('C:\xampp\htdocs','',__FILE__);
+            $my_redirection = str_replace('\\','/',$my_redirection);
+            
+            redirect($my_redirection."?msg={$msg}");
+            exit;
         }
-                $msg = "form was submitted - invalid";
+                $msg="form was submitted - invalid";
     }
 
 $feedbacks = [];
-if(file_exists(PATH.'comments.txt')){
+if(file_exists(PATH.'\\'.'comments.txt')){
     $serializedFeedbacks = file('comments.txt');
     //первый способ
     foreach($serializedFeedbacks as $s){
@@ -38,4 +42,4 @@ if(file_exists(PATH.'comments.txt')){
     //});
 }
 
-include_once 'layout.php';
+include 'layout.php';
